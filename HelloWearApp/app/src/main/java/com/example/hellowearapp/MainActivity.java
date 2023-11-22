@@ -15,9 +15,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView tvTime = findViewById(R.id.tvTime);
-
-        tvTime.setText(String.format("Today's Date is%s", new SimpleDateFormat("EEEE, MMMM d - yyyy", Locale.getDefault()).format(Calendar.getInstance().getTime())));
-
     }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.wear.widget.BoxInsetLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.MainActivity"
+        android:padding="5dp"
+        >
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <EditText
+                android:id="@+id/edtTask"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:inputType="textCapSentences|textAutoCorrect"
+                android:layout_gravity="center"
+                android:imeOptions="actionSend"
+                android:textColorHint="@color/orange"
+                android:hint="@string/add_task"/>
+            <androidx.wear.widget.WearableRecyclerView
+                android:id="@+id/wrcViewTasks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+    </androidx.wear.widget.BoxInsetLayout>
+
+
+</layout>
+
+
+

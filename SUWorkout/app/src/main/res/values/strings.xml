@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SUWorkout</string>
+    <string name="enter_duration">Enter Duration in Minutes</string>
+    <string name="add_workout">Add Workout Session</string>
+    <string name="workout_type">Choose Workout Type</string>
+    <string name="walking">Walking\n</string>
+    <string name="running">Running\n</string>
+    <string name="cycling">Cycling</string>
+</resources>
