@@ -12,6 +12,10 @@ import com.example.sagarassignment2.model.TaskModel;
 
 import java.util.List;
 
+/**
+ * Created by Sagar Ukani
+ * Adapter for the task recyclerview
+ */
 public class TaskAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public TaskAdapter(List<TaskModel> list, Context context) {
         this.list = list;

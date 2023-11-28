@@ -10,6 +10,10 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
 
+/**
+ * Created by Sagar Ukani
+ * For the preference
+ */
 public class PreferenceUtil {
     public static final String NAME = "SagarAssignment1";
     public static final String LIST_NAME = "my_tasks";

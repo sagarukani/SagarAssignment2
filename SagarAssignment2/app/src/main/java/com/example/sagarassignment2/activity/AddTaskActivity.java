@@ -34,6 +34,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
+
+/**
+ * Created by Sagar Ukani
+ * Screen for adding new task
+*/
 public class AddTaskActivity extends AppCompatActivity {
 
     private ActivityAddTaskBinding mainBinding;
@@ -60,6 +65,8 @@ public class AddTaskActivity extends AppCompatActivity {
         createNotificationChannel();
     }
 
+
+    //Managing click events of buttons
     private void onClick() {
         mainBinding.tvTaskName.setOnClickListener(v -> {
             Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
@@ -75,6 +82,7 @@ public class AddTaskActivity extends AppCompatActivity {
         });
     }
 
+    //For saving new task into preference
     private void saveTask() {
         TaskModel model = new TaskModel();
         model.setId(UUID.randomUUID().toString());
@@ -92,6 +100,7 @@ public class AddTaskActivity extends AppCompatActivity {
         getOnBackPressedDispatcher().onBackPressed();
     }
 
+    //For creating notification
     private void scheduleNotification(TaskModel model) {
         Intent intent = new Intent(getApplicationContext(), NotificationClass.class);
         String title = model.getName();
@@ -106,6 +115,7 @@ public class AddTaskActivity extends AppCompatActivity {
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT
         );
 
+        //Alarm manager for showing notification on exact time
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Long time = getTime(model.getDueDate() + " " + model.getDueTime());
         alarmManager.set(AlarmManager.RTC_WAKEUP, time, pendingIntent);
@@ -135,6 +145,7 @@ public class AddTaskActivity extends AppCompatActivity {
         notificationManager.createNotificationChannel(channel);
     }
 
+    //Date picker dialog
     private void showDateTimePickerDialog() {
 
         DatePickerDialog datePicker = new DatePickerDialog(
@@ -154,6 +165,7 @@ public class AddTaskActivity extends AppCompatActivity {
         datePicker.show();
     }
 
+    //Time picker dialog
     private void showTimePickerDialog() {
         TimePickerDialog timePicker = new TimePickerDialog(
                 this,
@@ -170,6 +182,7 @@ public class AddTaskActivity extends AppCompatActivity {
         timePicker.show();
     }
 
+    // Activity result launcher
     ActivityResultLauncher<Intent> speechResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {

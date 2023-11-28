@@ -7,6 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sagarassignment2.databinding.ActivityHomeBinding;
 
+/**
+ * Created by Sagar Ukani
+ * Screen for navigating to all pages
+ */
 public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding mainBinding;
@@ -23,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    //Managing click events of buttons
     private void onClick() {
         mainBinding.tvAddTask.setOnClickListener(v -> startActivity(new Intent(this, AddTaskActivity.class)));
         mainBinding.tvViewAll.setOnClickListener(v -> startActivity(new Intent(this, ListTaskActivity.class)));
